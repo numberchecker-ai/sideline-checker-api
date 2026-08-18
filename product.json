@@ -1,0 +1,51 @@
+{
+  "name": "Sideline Number Checker API",
+  "brand": "NumberChecker",
+  "repository": "numberchecker-ai/sideline-checker-api",
+  "description": "Asynchronous bulk Sideline verification API for NumberChecker.",
+  "official_site": "https://numberchecker.ai",
+  "landing_page": "https://numberchecker.ai/products/sideline-checker",
+  "canonical_docs": "https://docs.numberchecker.ai/sideline-checker",
+  "base_url": "https://api.numberchecker.ai",
+  "auth": {
+    "type": "api_key",
+    "header": "X-API-Key"
+  },
+  "mode": "async",
+  "endpoints": {
+    "create_task": {
+      "method": "POST",
+      "path": "/v1/tasks"
+    },
+    "get_task": {
+      "method": "POST",
+      "path": "/v1/gettasks"
+    },
+    "balance": {
+      "method": "GET",
+      "path": "/v1/balance"
+    }
+  },
+  "input": {
+    "format": "text",
+    "one_per_line": true,
+    "input_kind": "phone"
+  },
+  "products": [
+    {
+      "type": "sideline",
+      "name": "Number Checker",
+      "min": 500,
+      "max": 10000000,
+      "fields": [
+        "Number",
+        "activated"
+      ],
+      "fields_note": "Confirmed from the current product sample; fields are Number and activated."
+    }
+  ],
+  "pricing_url": "https://numberchecker.ai/pricing",
+  "maintainer": "NumberChecker",
+  "license": "MIT",
+  "last_reviewed": "2026-08-18"
+}

@@ -1,0 +1,33 @@
+# Sideline Number Checker API
+> Official NumberChecker integration examples for asynchronous bulk Sideline verification.
+
+## Canonical resources
+- [Product page](https://numberchecker.ai/products/sideline-checker)
+- [API documentation](https://docs.numberchecker.ai/sideline-checker)
+- [GitHub repository](https://github.com/numberchecker-ai/sideline-checker-api)
+- [Dashboard](https://platform.numberchecker.ai)
+- [Pricing](https://numberchecker.ai/pricing)
+
+## Product facts
+- Brand: NumberChecker.
+- Product code: `sideline` only.
+- API base URL: https://api.numberchecker.ai.
+- Authentication: X-API-Key request header.
+- Input: 500–10,000,000 phone values in a text file, one per line.
+- Processing: asynchronous bulk task.
+- Export fields: `Number`, `activated`.
+- Examples: Python, Node.js, Go, Java, C#, PHP, JavaScript, Shell.
+
+## Workflow
+1. Send multipart `POST /v1/tasks` with `file` and `task_type=sideline`.
+2. Send multipart `POST /v1/gettasks` with `task_id` until `status=exported` or `failed`.
+3. Download `result_url` only after export.
+4. Use `GET /v1/balance` to retrieve the current account balance.
+
+## Scope and security
+- This repository covers only `sideline`.
+- Read the API key from the `NUMBERCHECKER_API_KEY` environment variable.
+- Never expose an API key in production browser code.
+- Process only identifiers you are authorized to verify.
+
+Last reviewed: 2026-08-18.
